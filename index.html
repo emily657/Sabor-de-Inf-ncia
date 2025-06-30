@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor de Infância - Doces Personalizados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sabor de Infância</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#cardapio">Cardápio</a></li>
+                    <li><a href="#personalizados">Personalizados</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><button id="btn-cadastro">Cadastre-se</button></li>
+                    <li><button id="btn-login">Login</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>O sabor que te leva de volta à infância!</h2>
+                <p>Doces, sobremesas, cookies e cupcakes feitos com amor e carinho, do seu jeito.</p>
+                <a href="#cardapio" class="btn">Conheça nosso cardápio</a>
+            </div>
+        </section>
+
+        <section id="cardapio" class="cardapio">
+            <div class="container">
+                <h2>Nosso Cardápio</h2>
+                <div class="cardapio-grid">
+                    <div class="item">
+                        <h3>Bolos e Tortas</h3>
+                        <p>Variedade de sabores para todas as ocasiões.</p>
+                        <img src="https://via.placeholder.com/300x200/e0f2f1/795548?text=Bolo" alt="Bolo">
+                    </div>
+                    <div class="item">
+                        <h3>Cookies Especiais</h3>
+                        <p>Crocanter e deliciosos, do jeito que você gosta.</p>
+                        <img src="https://via.placeholder.com/300x200/e0f2f1/795548?text=Cookie" alt="Cookie">
+                    </div>
+                    <div class="item">
+                        <h3>Cupcakes</h3>
+                        <p>Pequenas obras de arte para adoçar seu dia.</p>
+                        <img src="https://via.placeholder.com/300x200/e0f2f1/795548?text=Cupcake" alt="Cupcake">
+                    </div>
+                    <div class="item">
+                        <h3>Doces Finos</h3>
+                        <p>Toque de sofisticação para seus eventos.</p>
+                        <img src="https://via.placeholder.com/300x200/e0f2f1/795548?text=Doce Fino" alt="Doce Fino">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="personalizados" class="personalizados">
+            <div class="container">
+                <h2>Doces Personalizados</h2>
+                <p>Transforme suas ideias em doces! Contate-nos para criar algo único.</p>
+                <a href="#contato" class="btn">Peça seu personalizado</a>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <div class="container">
+                <h2>Fale Conosco</h2>
+                <p>Entre em contato para orçamentos, pedidos ou dúvidas.</p>
+                <p>Endereço: Avenida Arapongas nº 1100 - Arapongas-PR, CEP 86700100</p>
+                <p>Telefone: (XX) XXXX-XXXX</p>
+                <p>E-mail: contato@sabordainfancia.com.br</p>
+            </div>
+        </section>
+
+        <div id="cadastroModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3>Cadastre-se</h3>
+                <form id="cadastroForm">
+                    <label for="cadastro-nome">Nome:</label>
+                    <input type="text" id="cadastro-nome" required>
+                    <label for="cadastro-email">E-mail:</label>
+                    <input type="email" id="cadastro-email" required>
+                    <label for="cadastro-telefone">Telefone:</label>
+                    <input type="tel" id="cadastro-telefone" required>
+                    <button type="submit" class="btn">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3>Login</h3>
+                <form id="loginForm">
+                    <label for="login-nome">Nome:</label>
+                    <input type="text" id="login-nome" required>
+                    <label for="login-email">E-mail:</label>
+                    <input type="email" id="login-email" required>
+                    <label for="login-telefone">Telefone:</label>
+                    <input type="tel" id="login-telefone" required>
+                    <button type="submit" class="btn">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sabor de Infância. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

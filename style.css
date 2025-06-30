@@ -1,0 +1,378 @@
+/* Variáveis de Cores */
+:root {
+    --verde-pastel: #E0F2F1; /* Verde-água bem claro */
+    --branco: #FFFFFF;
+    --dourado: #FFD700;
+    --texto-escuro: #333333;
+    --cinza-claro: #F8F8F8;
+    --borda-clara: #CCCCCC;
+}
+
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Fonte genérica, pode ser substituída por uma Google Font */
+}
+
+body {
+    line-height: 1.6;
+    color: var(--texto-escuro);
+    background-color: var(--cinza-claro);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background-color: var(--verde-pastel);
+    color: var(--texto-escuro);
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--dourado);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para responsividade em telas menores */
+}
+
+header h1 {
+    margin: 0;
+    color: var(--texto-escuro);
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espaçamento entre os itens do menu */
+}
+
+header nav ul li a {
+    color: var(--texto-escuro);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: var(--dourado);
+    color: var(--branco);
+}
+
+header button {
+    background-color: var(--dourado);
+    color: var(--branco);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #DAA520; /* Um dourado um pouco mais escuro */
+}
+
+/* Seções Principais */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section:nth-of-type(even) { /* Para alternar o background das seções */
+    background-color: var(--branco);
+}
+
+section:nth-of-type(odd) {
+    background-color: var(--cinza-claro);
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    color: var(--dourado);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--dourado);
+    color: var(--branco);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #DAA520;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1500x500/E0F2F1/795548?text=Sabor+de+Infância+Background') no-repeat center center/cover;
+    color: var(--texto-escuro);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+}
+
+.hero h2 {
+    color: var(--texto-escuro);
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+/* Cardápio */
+.cardapio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.cardapio-grid .item {
+    background-color: var(--verde-pastel);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--dourado);
+}
+
+.cardapio-grid .item:hover {
+    transform: translateY(-5px);
+}
+
+.cardapio-grid .item h3 {
+    color: var(--texto-escuro);
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.cardapio-grid .item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.cardapio-grid .item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 2px solid var(--dourado);
+}
+
+/* Modals (Login e Cadastro) */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fica por cima de tudo */
+    z-index: 1000; /* Alto z-index para garantir que esteja no topo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilita scroll se o conteúdo for maior que a tela */
+    background-color: rgba(0,0,0,0.6); /* Fundo escurecido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--branco);
+    margin: auto;
+    padding: 30px;
+    border: 2px solid var(--dourado);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h3 {
+    color: var(--dourado);
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+}
+
+.close-button {
+    color: var(--dourado);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #DAA520;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal form label {
+    font-weight: bold;
+    color: var(--texto-escuro);
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.modal form input[type="text"],
+.modal form input[type="email"],
+.modal form input[type="tel"] {
+    padding: 12px;
+    border: 1px solid var(--borda-clara);
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.modal form input[type="text"]:focus,
+.modal form input[type="email"]:focus,
+.modal form input[type="tel"]:focus {
+    border-color: var(--dourado);
+    outline: none;
+}
+
+.modal form .btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--verde-pastel);
+    color: var(--texto-escuro);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid var(--dourado);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header nav ul li {
+        width: 100%;
+    }
+
+    header nav ul li a,
+    header button {
+        width: 80%; /* Ajusta o tamanho dos botões e links no menu */
+        max-width: 250px;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .cardapio-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cardapio-grid .item img {
+        height: 150px; /* Ajusta a altura da imagem para telas muito pequenas */
+        object-fit: cover;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .modal form input {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
